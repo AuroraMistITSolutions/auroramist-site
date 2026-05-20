@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuroraMist IT Solutions | Websites That Bring Home Service Businesses More Jobs</title>
+<meta name="description" content="AuroraMist builds and manages modern websites for home service businesses in Ohio & Texas. Get found on Google, capture more leads, one flat monthly price. Free website audit.">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon-180.png">
+<style>
+  :root{
+    --navy:#0f172a; --ink:#1a2b4a; --slate:#475569; --mute:#64748b;
+    --teal:#2dd4bf; --blue:#3b82f6; --purple:#8b5cf6;
+    --grad:linear-gradient(135deg,#2dd4bf 0%,#3b82f6 50%,#8b5cf6 100%);
+    --bg:#ffffff; --bg2:#f8fafc; --line:#e2e8f0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--ink);line-height:1.65;background:var(--bg);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  a{text-decoration:none;color:inherit}
+  .btn{display:inline-block;background:var(--grad);color:#fff;font-weight:700;padding:15px 28px;border-radius:12px;font-size:16px;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;box-shadow:0 6px 20px rgba(59,130,246,.25)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(59,130,246,.35)}
+  .btn-ghost{background:transparent;color:var(--ink);box-shadow:none;border:1.5px solid var(--line);font-weight:600}
+  .btn-ghost:hover{border-color:var(--blue);box-shadow:none}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;color:var(--ink)}
+  .logo .tile{width:40px;height:40px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:17px;letter-spacing:.5px}
+  .logo small{display:block;font-size:10px;font-weight:600;letter-spacing:2px;color:var(--purple)}
+  nav .btn{padding:11px 20px;font-size:15px}
+  .nav-cta{display:flex;align-items:center;gap:18px}
+  .nav-phone{font-weight:600;color:var(--slate);font-size:15px}
+
+  /* HERO */
+  .hero{padding:88px 0 72px;text-align:center;background:radial-gradient(120% 120% at 50% 0%,#f0f9ff 0%,#ffffff 55%)}
+  .hero h1{font-size:48px;line-height:1.12;letter-spacing:-1px;max-width:760px;margin:0 auto 22px;color:var(--navy)}
+  .hero h1 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p.sub{font-size:20px;color:var(--slate);max-width:620px;margin:0 auto 34px}
+  .hero .micro{margin-top:16px;font-size:14px;color:var(--mute)}
+  .badges{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:46px;color:var(--mute);font-size:14px;font-weight:600}
+  .badges span{display:flex;align-items:center;gap:7px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}
+
+  /* SECTION */
+  section{padding:76px 0}
+  .sec-tag{text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:700;color:var(--blue);text-align:center;margin-bottom:12px}
+  h2{font-size:34px;text-align:center;letter-spacing:-.5px;color:var(--navy);max-width:680px;margin:0 auto 14px;line-height:1.2}
+  .lead{text-align:center;color:var(--slate);font-size:18px;max-width:600px;margin:0 auto 48px}
+  .alt{background:var(--bg2)}
+
+  .grid{display:grid;gap:24px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px}
+  .alt .card{background:#fff}
+  .card h3{font-size:19px;margin-bottom:8px;color:var(--ink)}
+  .card p{color:var(--slate);font-size:15.5px}
+  .icon{width:46px;height:46px;border-radius:11px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:#fff;font-size:22px;font-weight:700}
+
+  /* STEPS */
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{position:relative;padding:30px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+  .step .num{width:38px;height:38px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .step h3{font-size:18px;margin-bottom:6px}
+  .step p{color:var(--slate);font-size:15px}
+
+  /* INCLUDED list */
+  .inc{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px 32px}
+  .inc li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--ink)}
+  .check{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:#ecfdf5;color:#059669;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;margin-top:2px}
+
+  /* WHY */
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .why .panel{background:var(--navy);color:#fff;border-radius:20px;padding:40px}
+  .why .panel h3{font-size:22px;margin-bottom:16px}
+  .why .panel p{color:#cbd5e1;font-size:16px;margin-bottom:14px}
+  .why .stat{background:var(--grad);border-radius:16px;padding:30px;color:#fff}
+  .why .stat .big{font-size:40px;font-weight:700;line-height:1}
+  .why .stat p{font-size:15px;opacity:.95;margin-top:8px}
+
+  /* PRICING */
+  .price{max-width:520px;margin:0 auto;border:2px solid var(--blue);border-radius:22px;padding:44px 40px;text-align:center;background:#fff;box-shadow:0 18px 50px rgba(59,130,246,.12)}
+  .price .amt{font-size:56px;font-weight:700;color:var(--navy);letter-spacing:-1px}
+  .price .amt span{font-size:20px;color:var(--mute);font-weight:600}
+  .price .terms{color:var(--slate);margin:8px 0 26px}
+  .price ul{text-align:left;max-width:340px;margin:0 auto 30px}
+  .price li{list-style:none;display:flex;gap:10px;margin-bottom:10px;color:var(--ink);font-size:15.5px}
+
+  /* FAQ */
+  .faq{max-width:720px;margin:0 auto}
+  details{border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:12px;background:#fff}
+  summary{font-weight:600;cursor:pointer;font-size:17px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:22px;color:var(--blue);font-weight:400}
+  details[open] summary::after{content:"−"}
+  details p{color:var(--slate);margin-top:12px;font-size:15.5px}
+
+  /* CTA band */
+  .cta-band{background:var(--navy);color:#fff;text-align:center;border-radius:24px;padding:60px 30px;margin:0 24px}
+  .cta-band h2{color:#fff;margin-bottom:14px}
+  .cta-band p{color:#cbd5e1;margin-bottom:30px;font-size:18px}
+
+  /* FOOTER */
+  footer{padding:48px 0 40px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+  .foot a{color:var(--slate);font-weight:600}
+
+  @media(max-width:860px){
+    .g3,.steps,.why,.inc{grid-template-columns:1fr}
+    .hero h1{font-size:34px}
+    .hero p.sub{font-size:18px}
+    h2{font-size:27px}
+    .nav-phone{display:none}
+    .why .panel{order:2}
+  }
+  .calendly-popup,.calendly-popup-content{border-radius:18px !important;overflow:hidden}
+  .calendly-popup-content iframe{border-radius:18px}
+</style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#" class="logo">
+        <span class="tile">AM</span>
+        <span>AuroraMist<small>IT SOLUTIONS</small></span>
+      </a>
+      <div class="nav-cta">
+        <span class="nav-phone">(512) 773-2866</span>
+        <a href="https://calendly.com/farhan-auroramist/30min" target="_blank" rel="noopener" onclick="return bookAudit()" class="btn">Free website audit</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Your website should be bringing you jobs — <span class="hl">not collecting dust.</span></h1>
+    <p class="sub">AuroraMist builds and manages modern websites for home service businesses in Ohio &amp; Texas. Get found on Google, capture more leads, and look like the pro you are — for one flat monthly price.</p>
+    <a href="https://calendly.com/farhan-auroramist/30min" target="_blank" rel="noopener" onclick="return bookAudit()" class="btn">Get your free 15-minute audit</a>
+    <p class="micro">No contract to start. We'll show you exactly what's costing you customers.</p>
+    <div class="badges">
+      <span><i class="dot"></i> Live in one week</span>
+      <span><i class="dot"></i> No setup fee</span>
+      <span><i class="dot"></i> You always own your site</span>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <p class="sec-tag">The problem</p>
+    <h2>Is your website quietly losing you money?</h2>
+    <p class="lead">Most home service businesses lose jobs every week without realizing it — to competitors with a better online presence.</p>
+    <div class="grid g3">
+      <div class="card"><div class="icon">📱</div><h3>Not built for phones</h3><p>Over 75% of customers check you on their phone first. If your site is hard to use on mobile, they bounce — straight to your competitor.</p></div>
+      <div class="card"><div class="icon">🔍</div><h3>Invisible on Google</h3><p>When someone searches "plumber near me," you don't show up. No visibility means no calls, no matter how good your work is.</p></div>
+      <div class="card"><div class="icon">📞</div><h3>No easy way to reach you</h3><p>No click-to-call, no contact form, no booking. Every extra step is a customer you just lost to someone easier to reach.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="sec-tag">What you get</p>
+    <h2>A complete online presence — handled for you</h2>
+    <p class="lead">One flat monthly price covers everything. No tech headaches, no surprise bills.</p>
+    <ul class="inc">
+      <li><span class="check">✓</span> A modern, mobile-first website built in your first week</li>
+      <li><span class="check">✓</span> Hosting, security, backups & domain — all managed</li>
+      <li><span class="check">✓</span> Lead capture: every form sends you an instant email + text</li>
+      <li><span class="check">✓</span> Google Business Profile setup so you show up locally</li>
+      <li><span class="check">✓</span> A monthly report of your visits, calls & leads</li>
+      <li><span class="check">✓</span> 24-hour support whenever you need a change</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <p class="sec-tag">How it works</p>
+    <h2>Three simple steps to a website that works</h2>
+    <p class="lead"></p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Free audit</h3><p>We review your current site (or lack of one) and show you exactly what's costing you customers. 15 minutes, no obligation.</p></div>
+      <div class="step"><div class="num">2</div><h3>We build it</h3><p>Your new site goes live within a week — with zero upfront cost. You approve it before it's published.</p></div>
+      <div class="step"><div class="num">3</div><h3>We maintain it</h3><p>You get the leads, we handle all the tech. Each month you get a clear report on how your site is performing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="sec-tag">Why AuroraMist</p>
+    <h2>Run by a data analyst, not just a web designer</h2>
+    <div class="why">
+      <div class="panel">
+        <h3>You get numbers, not guesses.</h3>
+        <p>I spend my days turning data into decisions for a major company. I bring that same rigor to your website.</p>
+        <p>So you don't just get a pretty page — you get a clear monthly picture of how many people found you, called you, and became paying customers.</p>
+        <p style="color:#7dd3fc;font-weight:600;margin-bottom:0">No other service at this price does that.</p>
+      </div>
+      <div class="stat">
+        <div class="big">$497<span style="font-size:18px">/mo</span></div>
+        <p>Everything included. No setup fee. Your website, your domain — always yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="pricing">
+  <div class="wrap">
+    <p class="sec-tag">Simple pricing</p>
+    <h2>One price. Everything included.</h2>
+    <p class="lead">No setup fees. No long-term lock-in beyond a fair 6-month start.</p>
+    <div class="price">
+      <div class="amt">$497<span>/month</span></div>
+      <p class="terms">6-month minimum · no setup fee · cancel anytime after</p>
+      <ul>
+        <li><span class="check">✓</span> New website, built &amp; hosted</li>
+        <li><span class="check">✓</span> Lead capture + instant alerts</li>
+        <li><span class="check">✓</span> Google Business Profile setup</li>
+        <li><span class="check">✓</span> Monthly performance report</li>
+        <li><span class="check">✓</span> 24-hour support</li>
+      </ul>
+      <a href="https://calendly.com/farhan-auroramist/30min" target="_blank" rel="noopener" onclick="return bookAudit()" class="btn" style="width:100%">Start with a free audit</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="sec-tag">Questions</p>
+    <h2>Good questions, straight answers</h2>
+    <p class="lead"></p>
+    <div class="faq">
+      <details open><summary>Do I own my website?</summary><p>Yes — always. The domain and the site are yours. If you ever leave, you keep everything.</p></details>
+      <details><summary>What if I already have a website?</summary><p>We'll rebuild or improve it. Most of our clients come to us with an old site that isn't bringing in business.</p></details>
+      <details><summary>How long until it's live?</summary><p>Within one week of starting. We move fast so you start getting value right away.</p></details>
+      <details><summary>Is there a setup fee?</summary><p>No. You pay one flat monthly price — that's it. No surprises.</p></details>
+      <details><summary>What areas do you serve?</summary><p>We're based in Ohio and Texas and serve home service businesses across both — and remotely anywhere in the US.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="audit">
+  <div class="cta-band">
+    <h2>Ready to stop losing customers to a bad website?</h2>
+    <p>Book a free 15-minute audit. We'll show you what's wrong and how to fix it — no pressure, no obligation.</p>
+    <a href="https://calendly.com/farhan-auroramist/30min" target="_blank" rel="noopener" onclick="return bookAudit()" class="btn" style="background:#fff;color:var(--navy)">Book your free audit</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 AuroraMist IT Solutions LLC · Texas &amp; Ohio</div>
+    <div>
+      <a href="mailto:farhan@auroramist.co">farhan@auroramist.co</a> &nbsp;·&nbsp;
+      <a href="tel:+15127732866">(512) 773-2866</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var CALENDLY_URL = "https://calendly.com/farhan-auroramist/30min";
+  function bookAudit(){ if(window.Calendly){ Calendly.initPopupWidget({url:CALENDLY_URL}); return false; } return true; }
+</script>
+
+</body>
+</html>
