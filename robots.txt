@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://auroramist.co/sitemap.xml
