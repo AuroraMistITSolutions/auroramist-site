@@ -52,12 +52,14 @@ section{position:relative}
 /* ---------- Utility ---------- */
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  font-family:"Poppins",sans-serif;font-weight:600;font-size:.8rem;
+  font-family:"Poppins",sans-serif;font-weight:600;font-size:1.06rem;
   letter-spacing:.14em;text-transform:uppercase;color:var(--teal);
   margin-bottom:14px;
 }
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--rose);border-radius:2px}
 .eyebrow.center{justify-content:center}
+.svc-copy .eyebrow{font-size:clamp(1.7rem,3vw,2.5rem)}
+.svc-copy h2{font-size:clamp(1.2rem,3vw,2rem)}
 .section{padding:84px 0}
 .section.tight{padding:60px 0}
 .section.soft{background:var(--bg-soft)}
@@ -98,7 +100,7 @@ section{position:relative}
 .topbar .pill{background:rgba(255,255,255,.12);padding:4px 12px;border-radius:50px;font-weight:600;color:#fff}
 
 /* ---------- Header / nav ---------- */
-.site-header{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.site-header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .3s}
 .site-header.scrolled{box-shadow:var(--shadow-sm)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;flex:none}
@@ -262,16 +264,108 @@ section{position:relative}
 .note-card p{color:var(--ink);font-size:.96rem}
 
 /* ---------- Team ---------- */
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.member{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-align:center;transition:.26s var(--ease)}
-.member:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.member .m-photo{height:215px;background:var(--teal-soft);position:relative;overflow:hidden;display:grid;place-items:center}
-.member .m-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
-.member .m-photo .m-avatar{width:100%;height:100%;display:grid;place-items:center;font-family:"Poppins";font-weight:700;font-size:2.7rem;letter-spacing:.04em;color:var(--teal);background:linear-gradient(150deg,#e8f4f5,#f6fbfb)}
-.member:hover .m-photo .m-avatar{background:linear-gradient(150deg,#ddeff1,#eef8f9)}
-.member .m-body{padding:18px 14px 22px}
-.member h3{font-size:1.05rem;margin-bottom:3px}
-.member span{color:var(--teal);font-size:.86rem;font-family:"Poppins";font-weight:500}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+/* Card layout */
+/* Card layout */
+.member{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:.26s var(--ease);
+  display:flex;
+  align-items:center;
+  text-align:left;
+  min-height:170px;
+}
+
+.member:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+/* Image section */
+.member .m-photo{
+  width:165px;
+  min-width:165px;
+  height:170px;
+  background:var(--teal-soft);
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+}
+
+.member .m-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top;
+}
+
+/* Avatar fallback */
+.member .m-photo .m-avatar{
+  width:100%;
+  height:100%;
+  display:grid;
+  place-items:center;
+  font-family:"Poppins";
+  font-weight:700;
+  font-size:2.4rem;
+  letter-spacing:.04em;
+  color:var(--teal);
+  background:linear-gradient(150deg,#e8f4f5,#f6fbfb);
+}
+
+.member:hover .m-photo .m-avatar{
+  background:linear-gradient(150deg,#ddeff1,#eef8f9);
+}
+
+/* Text section */
+.member .m-body{
+  padding:20px;
+  flex:1;
+}
+
+.member h3{
+  font-size:1.05rem;
+  margin-bottom:6px;
+  line-height:1.4;
+}
+
+.member span{
+  color:var(--teal);
+  font-size:.88rem;
+  font-family:"Poppins";
+  font-weight:500;
+  line-height:1.5;
+}
+
+/* Mobile */
+@media (max-width:640px){
+
+  .member{
+    min-height:140px;
+  }
+
+  .member .m-photo{
+    width:120px;
+    min-width:120px;
+    height:140px;
+  }
+
+  .member .m-body{
+    padding:14px;
+  }
+
+  .member h3{
+    font-size:.96rem;
+  }
+
+  .member span{
+    font-size:.8rem;
+  }
+}
 .team-cat{font-family:"Poppins";color:var(--navy);font-size:1.3rem;margin:0 0 22px;display:flex;align-items:center;gap:12px}
 .team-cat::after{content:"";flex:1;height:1px;background:var(--line)}
 
@@ -311,7 +405,7 @@ section{position:relative}
 /* ---------- Footer ---------- */
 .site-footer{background:var(--navy);color:#aebfc6;padding:62px 0 0}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:36px;padding-bottom:46px}
-.foot-brand img{height:48px;margin-bottom:16px;filter:brightness(0) invert(1)}
+.foot-brand img{height:48px;margin-bottom:16px;}
 .foot-brand p{font-size:.93rem;color:#9fb2b9;max-width:280px}
 .foot-col h4{color:#fff;font-family:"Poppins";font-size:1.02rem;margin-bottom:18px}
 .foot-col ul{list-style:none;display:grid;gap:11px}
@@ -345,17 +439,18 @@ section{position:relative}
   .trust-item:nth-child(odd){border-left:none}
   .stats{grid-template-columns:repeat(2,1fr);gap:30px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .form-card{max-width:520px;margin:0 auto}
 }
 @media (max-width:680px){
   .topbar .tb-left span:not(.always):not(.tb-hours){display:none}
   .nav-links{
     position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;background:#fff;
-    flex-direction:column;align-items:stretch;justify-content:flex-start;gap:4px;
+    flex-direction:column;align-items:stretch;justify-content:flex-start;gap:20px;
     padding:90px 24px 30px;box-shadow:-10px 0 40px rgba(0,0,0,.12);
     transform:translateX(100%);transition:transform .32s var(--ease);z-index:190;
   }
   .nav-links.open{transform:translateX(0)}
-  .nav-links a{padding:14px 16px;font-size:1.05rem;border-radius:10px}
+  .nav-links a{padding:14px 16px;font-size:1.05rem;border-radius:10px;}
   .nav-toggle{display:flex}
   .nav-cta .btn-primary{display:none}
   .nav-call .label{display:none}
@@ -366,6 +461,7 @@ section{position:relative}
   .section{padding:60px 0}
   .hero-badge{display:none}
   .foot-grid{grid-template-columns:1fr}
+  .svc-media{display:none}
 }
 .nav-overlay{position:fixed;inset:0;background:rgba(15,46,61,.45);z-index:180;opacity:0;visibility:hidden;transition:.3s}
 .nav-overlay.open{opacity:1;visibility:visible}
@@ -412,6 +508,7 @@ section{position:relative}
   .trust-item .ti-ico svg{width:18px;height:18px}
   .trust-item strong{font-size:.78rem;line-height:1.15}
   .trust-item span{display:none}
+  .form-card{margin:0 -24px;max-width:none;width:calc(100% + 48px); background-color: #e9f3f4;border-radius:0;box-shadow:none;border:0}
 }
 
 
@@ -471,3 +568,7 @@ section{position:relative}
   .stat strong{font-size:1.5rem}
   .stat span{font-size:.76rem;line-height:1.2}
 }
+
+
+/* ===== Mobile fix v9: kill horizontal scroll, fix off-canvas nav + bottom bar on Android ===== */
+html,body{overflow-x:clip;max-width:100%}

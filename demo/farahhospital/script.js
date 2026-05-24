@@ -19,36 +19,72 @@
     onScroll();
 
     /* ---- Mobile nav ---- */
-    var toggle = document.querySelector(".nav-toggle");
-    var links = document.querySelector(".nav-links");
-    var overlay = document.querySelector(".nav-overlay");
-    function closeNav() {
-      if (toggle) toggle.classList.remove("open");
-      if (links) links.classList.remove("open");
-      if (overlay) overlay.classList.remove("open");
-      document.body.style.overflow = "";
+  /* ---- Mobile nav ---- */
+  var toggle = document.querySelector(".nav-toggle");
+  var links = document.querySelector(".nav-links");
+  var overlay = document.querySelector(".nav-overlay");
+
+  function closeNav(fromBackButton = false) {
+    if (toggle) toggle.classList.remove("open");
+    if (links) links.classList.remove("open");
+    if (overlay) overlay.classList.remove("open");
+
+    document.body.style.overflow = "";
+
+    // Remove fake history state
+    if (!fromBackButton && history.state?.mobileNavOpen) {
+      history.back();
     }
-    function openNav() {
-      if (toggle) toggle.classList.add("open");
-      if (links) links.classList.add("open");
-      if (overlay) overlay.classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-    if (toggle) {
-      toggle.addEventListener("click", function () {
-        if (links && links.classList.contains("open")) closeNav();
-        else openNav();
-      });
-    }
-    if (overlay) overlay.addEventListener("click", closeNav);
-    if (links) {
-      links.querySelectorAll("a").forEach(function (a) {
-        a.addEventListener("click", closeNav);
-      });
-    }
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeNav();
+  }
+
+  function openNav() {
+    if (toggle) toggle.classList.add("open");
+    if (links) links.classList.add("open");
+    if (overlay) overlay.classList.add("open");
+
+    document.body.style.overflow = "hidden";
+
+    // Add fake history state
+    history.pushState({ mobileNavOpen: true }, "");
+  }
+
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      if (links && links.classList.contains("open")) {
+        closeNav();
+      } else {
+        openNav();
+      }
     });
+  }
+
+  if (overlay) {
+    overlay.addEventListener("click", function () {
+      closeNav();
+    });
+  }
+
+  if (links) {
+    links.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        closeNav();
+      });
+    });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeNav();
+    }
+  });
+
+  // Handle browser back button
+  window.addEventListener("popstate", function () {
+    if (links && links.classList.contains("open")) {
+      closeNav(true);
+    }
+  });
+  
 
     /* ---- FAQ accordion ---- */
     document.querySelectorAll(".faq-q").forEach(function (q) {
