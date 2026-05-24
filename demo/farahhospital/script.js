@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var WHATSAPP_NUMBER = "919226182992"; // international format, no '+'
+  var WHATSAPP_NUMBER = "919226582992"; // international format, no '+'
 
   document.addEventListener("DOMContentLoaded", function () {
 
