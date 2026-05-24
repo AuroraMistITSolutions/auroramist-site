@@ -347,7 +347,7 @@ section{position:relative}
   .foot-grid{grid-template-columns:1fr 1fr;gap:30px}
 }
 @media (max-width:680px){
-  .topbar .tb-left span:not(.always){display:none}
+  .topbar .tb-left span:not(.always):not(.tb-hours){display:none}
   .nav-links{
     position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;background:#fff;
     flex-direction:column;align-items:stretch;justify-content:flex-start;gap:4px;
@@ -369,3 +369,105 @@ section{position:relative}
 }
 .nav-overlay{position:fixed;inset:0;background:rgba(15,46,61,.45);z-index:180;opacity:0;visibility:hidden;transition:.3s}
 .nav-overlay.open{opacity:1;visibility:visible}
+
+
+/* ===== Mobile improvements (research-backed) ===== */
+.mobile-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:170;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(15,46,61,.13)}
+.mobile-bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 4px;min-height:56px;font-family:"Poppins",sans-serif;font-weight:600;font-size:.72rem;text-decoration:none;color:var(--navy)}
+.mobile-bar a svg{width:22px;height:22px}
+.mobile-bar .mb-call{color:var(--teal)}
+.mobile-bar .mb-wa{color:#1eb455}
+.mobile-bar .mb-book{background:var(--teal);color:#fff}
+@media (max-width:980px){
+  .hero-copy{order:2}
+  .hero-figure{order:1}
+}
+@media (max-width:680px){
+  .services-cards{grid-template-columns:1fr 1fr;gap:12px}
+  .services-cards .card{padding:18px 12px;text-align:center}
+  .services-cards .card .c-ico{margin:0 auto 12px;width:50px;height:50px}
+  .services-cards .card .c-ico svg{width:24px;height:24px}
+  .services-cards .card h3{font-size:1rem}
+  .services-cards .card p,.services-cards .card .c-link{display:none}
+  .tst-grid .tst:nth-child(n+3){display:none}
+  .wa-float{display:none}
+  .mobile-bar{display:flex}
+  body{padding-bottom:66px}
+}
+
+
+/* ===== Mobile tweaks v2 ===== */
+.trust .container{grid-template-columns:repeat(3,1fr)}
+@media (max-width:980px){
+  .trust .container{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:680px){
+  .nav-call{display:none}
+  .hero .container{padding-top:0;padding-bottom:28px;gap:22px}
+  .hero-figure{margin:0 -24px;max-width:none;width:calc(100% + 48px)}
+  .hero-figure img{border-radius:0;box-shadow:none}
+  .trust .container{grid-template-columns:repeat(3,1fr);gap:4px;padding-top:16px;padding-bottom:16px}
+  .trust-item{flex-direction:column;text-align:center;gap:6px;padding:4px 4px;border-left:none!important}
+  .trust-item .ti-ico{width:34px;height:34px;border-radius:9px}
+  .trust-item .ti-ico svg{width:18px;height:18px}
+  .trust-item strong{font-size:.78rem;line-height:1.15}
+  .trust-item span{display:none}
+}
+
+
+/* ===== Mobile tweaks v3: full-bleed Dr. Farah block ===== */
+@media (max-width:680px){
+  .doctor-section{padding:0}
+  .doctor{margin-left:-24px;margin-right:-24px;border-radius:0}
+  .doctor-photo{min-height:280px}
+}
+
+
+/* ===== Mobile tweaks v4: top bar — phone line 1, hours + 24/7 line 2, no WhatsApp ===== */
+@media (max-width:680px){
+  .topbar .container{height:auto;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:5px;column-gap:14px;padding-top:7px;padding-bottom:7px}
+  .topbar .tb-left,.topbar .tb-right{display:contents}
+  .topbar .tb-email{display:none}
+  .topbar .tb-right a{display:none}
+  .topbar .tb-phone{flex:0 0 100%;justify-content:center}
+}
+
+
+/* ===== Mobile tweaks v5: top bar left-justified, hours + 24/7 on one line ===== */
+.tb-hours .hrs-short{display:none}
+@media (max-width:680px){
+  .topbar{font-size:.8rem}
+  .topbar .container{justify-content:flex-start}
+  .topbar .tb-phone{justify-content:flex-start}
+  .tb-hours .hrs-full{display:none}
+  .tb-hours .hrs-short{display:inline}
+}
+
+
+/* ===== Mobile tweaks v6: top bar all on one line (phone + hours + 24/7) ===== */
+@media (max-width:680px){
+  .topbar{font-size:.72rem}
+  .topbar .container{justify-content:flex-start;column-gap:10px;row-gap:0;flex-wrap:wrap}
+  .topbar .tb-phone{flex:0 1 auto;justify-content:flex-start}
+  .topbar .tb-hours .tb-ico{display:none}
+  .topbar .pill{padding:3px 9px}
+}
+
+
+/* ===== Mobile tweaks v7: top bar — phone left + 24/7 right (line 1), hours centered (line 2) ===== */
+@media (max-width:680px){
+  .topbar .container{justify-content:space-between;align-items:center;flex-wrap:wrap;column-gap:10px;row-gap:3px}
+  .topbar .tb-phone{order:1;flex:0 1 auto;justify-content:flex-start}
+  .topbar .pill{order:2}
+  .topbar .tb-hours{order:3;flex:0 0 100%;justify-content:center}
+  .topbar .tb-hours .tb-ico{display:inline-block}
+}
+
+
+/* ===== Mobile tweaks v8: stats one row on mobile ===== */
+@media (max-width:980px){ .stats{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:680px){
+  .stats{grid-template-columns:repeat(3,1fr);gap:10px}
+  .stat strong{font-size:1.5rem}
+  .stat span{font-size:.76rem;line-height:1.2}
+}
