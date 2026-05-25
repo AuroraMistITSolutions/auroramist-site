@@ -195,7 +195,7 @@ section{position:relative}
 .doctor{background:linear-gradient(140deg,var(--navy),#10404f);color:#fff;border-radius:var(--radius-lg);overflow:hidden}
 .doctor-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:0;align-items:stretch}
 .doctor-photo{background:var(--teal-soft);min-height:340px;position:relative;overflow:hidden}
-.doctor-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
+.doctor-photo img{width:100%;height:100%;object-fit:cover;object-position: 80% center;}
 .doctor-body{padding:50px 48px}
 .doctor-body .eyebrow{color:#7fd4dd}
 .doctor-body .eyebrow::before{background:var(--rose)}
