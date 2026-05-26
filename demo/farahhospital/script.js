@@ -67,6 +67,8 @@
   if (links) {
     links.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () {
+        // don't close nav when tapping the dropdown toggle
+        if (a.classList.contains('dropdown-toggle')) return;
         closeNav();
       });
     });
@@ -84,6 +86,65 @@
       closeNav(true);
     }
   });
+
+    /* ---- Services dropdown ---- */
+    var dropdownItems = document.querySelectorAll('.has-dropdown');
+    dropdownItems.forEach(function(item) {
+      var trigger = item.querySelector('.dropdown-toggle');
+      if (trigger) {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var isOpen = item.classList.contains('open');
+          dropdownItems.forEach(function(d) { d.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+        });
+      }
+    });
+    document.addEventListener('click', function(e) {
+      dropdownItems.forEach(function(item) {
+        if (!item.contains(e.target)) item.classList.remove('open');
+      });
+    });
+
+    /* ---- Carousel dots (shared helper) ---- */
+    function makeCarouselDots(track, itemSel) {
+      if (!track) return;
+      var items = Array.from(track.querySelectorAll(itemSel));
+      if (items.length < 2) return;
+
+      var dotsWrap = document.createElement('div');
+      dotsWrap.className = 'tst-dots';
+
+      items.forEach(function(item, i) {
+        var dot = document.createElement('button');
+        dot.className = 'tst-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to item ' + (i + 1));
+        dot.addEventListener('click', function() {
+          var left = item.offsetLeft - (track.offsetWidth - item.offsetWidth) / 2;
+          track.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+        });
+        dotsWrap.appendChild(dot);
+      });
+
+      track.parentNode.insertBefore(dotsWrap, track.nextSibling);
+
+      function syncDots() {
+        var dots = dotsWrap.querySelectorAll('.tst-dot');
+        var center = track.scrollLeft + track.offsetWidth / 2;
+        var closest = 0, minDist = Infinity;
+        items.forEach(function(item, i) {
+          var dist = Math.abs((item.offsetLeft + item.offsetWidth / 2) - center);
+          if (dist < minDist) { minDist = dist; closest = i; }
+        });
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === closest); });
+      }
+      track.addEventListener('scroll', syncDots, { passive: true });
+      syncDots();
+    }
+
+    makeCarouselDots(document.querySelector('.tst-grid'),  '.tst');
+    makeCarouselDots(document.querySelector('.why-grid'),  '.why-card');
 
     /* ---- FAQ accordion ---- */
     document.querySelectorAll(".faq-q").forEach(function (q) {
