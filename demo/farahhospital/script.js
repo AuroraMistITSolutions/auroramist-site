@@ -84,28 +84,6 @@
       closeNav(true);
     }
   });
-  
-
-    /* ---- Services dropdown ---- */
-    var dropdownItems = document.querySelectorAll('.has-dropdown');
-    dropdownItems.forEach(function(item) {
-      var trigger = item.querySelector('.dropdown-toggle');
-      if (trigger) {
-        trigger.addEventListener('click', function(e) {
-          e.preventDefault();
-          var isOpen = item.classList.contains('open');
-          // close all others
-          dropdownItems.forEach(function(d) { d.classList.remove('open'); });
-          if (!isOpen) item.classList.add('open');
-        });
-      }
-    });
-    // close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-      dropdownItems.forEach(function(item) {
-        if (!item.contains(e.target)) item.classList.remove('open');
-      });
-    });
 
     /* ---- FAQ accordion ---- */
     document.querySelectorAll(".faq-q").forEach(function (q) {
